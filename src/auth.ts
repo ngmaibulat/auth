@@ -2,7 +2,7 @@
 
 import { db } from "./db.js";
 import { help } from "./utils.js";
-import { info, ping, list, add } from "./dbutils.js";
+import { info, ping, list, add, del, checkpw } from "./dbutils.js";
 import { init } from "./schema.js";
 
 // console.log(process.env.MSG);
@@ -33,11 +33,19 @@ switch (cmd) {
         break;
 
     case "add":
-        await add();
+        await add(process.argv[3], process.argv[4]);
         break;
 
     case "list":
         await list();
+        break;
+
+    case "del":
+        await del(process.argv[3]);
+        break;
+
+    case "check":
+        await checkpw(process.argv[3], process.argv[4]);
         break;
 
     default:

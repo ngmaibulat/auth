@@ -16,8 +16,8 @@ export async function init() {
 
     await db.schema.createTable("users", function (table) {
         table.increments();
-        table.string("email");
+        table.string("email").unique();
         table.string("hash");
-        table.timestamps();
+        table.timestamps(true, true);
     });
 }
