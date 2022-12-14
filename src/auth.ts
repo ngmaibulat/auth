@@ -1,4 +1,4 @@
-#!/usr/bin/env node --no-warnings
+#!/usr/bin/env node
 
 import { db } from "./db.js";
 import { help } from "./utils.js";
