@@ -1,0 +1,34 @@
+{
+  "name": "@aibulat/auth",
+  "version": "0.0.1",
+  "description": "CLI tool: check username password via sql database table",
+  "main": "index.js",
+  "type": "module",
+  "bin": {
+    "auth": "dist/auth.js",
+    "bcrypt": "dist/bcrypt.js",
+    "bcrypt-compare": "dist/bcrypt-compare.js"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ngmaibulat/auth.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ngmaibulat/auth/issues"
+  },
+  "homepage": "https://github.com/ngmaibulat/auth#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.15",
+    "@types/bcryptjs": "^2.4.2"
+  }
+}
