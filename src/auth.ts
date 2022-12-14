@@ -1,3 +1,5 @@
+#!/usr/bin/env node --no-warnings
+
 import dotenv from "dotenv";
 
 dotenv.config();

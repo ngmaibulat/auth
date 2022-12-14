@@ -3,3 +3,9 @@
 CLI tool: check username password via sql database table
 
 # Not ready - don't use!
+
+### Install
+
+```bash
+sudo npm install -g @aibulat/auth
+```

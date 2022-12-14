@@ -1,3 +1,5 @@
+#!/usr/bin/env node --no-warnings
+
 import bcrypt from "bcryptjs";
 
 if (process.argv.length < 4) {
