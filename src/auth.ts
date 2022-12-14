@@ -2,7 +2,7 @@
 
 import { db } from "./db.js";
 import { help } from "./utils.js";
-import { info, ping, list, add, del, checkpw } from "./dbutils.js";
+import { info, ping, list, add, del, checkpw, chpw } from "./dbutils.js";
 import { init } from "./schema.js";
 
 // console.log(process.env.MSG);
@@ -46,6 +46,10 @@ switch (cmd) {
 
     case "check":
         await checkpw(process.argv[3], process.argv[4]);
+        break;
+
+    case "chpass":
+        await chpw(process.argv[3], process.argv[4]);
         break;
 
     default:

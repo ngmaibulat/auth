@@ -103,6 +103,49 @@ export async function add(user: string, pass: string) {
     }
 }
 
+export async function chpw(user: string, pass: string) {
+    if (!preCheck()) {
+        return;
+    }
+
+    if (!user) {
+        console.log("Usage: chpass <user> <pass>");
+        return;
+    }
+
+    if (!pass) {
+        console.log("Usage: chpass <user> <pass>");
+        return;
+    }
+
+    const salt = await bcrypt.genSalt(10);
+    const hash = await bcrypt.hash(pass, salt);
+
+    try {
+        const data = await db<User>("users").where({
+            email: user,
+        });
+
+        if (!data.length) {
+            console.error("User not found");
+            return;
+        }
+
+        const record = data[0];
+        record.hash = hash;
+
+        const res = await db<User>("users")
+            .where({
+                email: user,
+            })
+            .update(record);
+
+        console.log("OK");
+    } catch (err) {
+        console.error("Change Password failed");
+    }
+}
+
 export async function del(user: string) {
     if (!preCheck()) {
         return;
